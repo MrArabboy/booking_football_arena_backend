@@ -11,7 +11,7 @@ from apps.core.models.abstract import (
 )
 
 
-class FootballArea(
+class FootballArena(
     IsActiveAbstract, LocationAbstract, OrderAbstract, CreatedUpdatedAbstract
 ):
     owner = models.ForeignKey(
@@ -32,15 +32,17 @@ class FootballArea(
 
     class Meta:
         ordering = ("order",)
-        verbose_name = _("Football Area")
-        verbose_name_plural = _("Football Areas")
+        verbose_name = _("Football Arena")
+        verbose_name_plural = _("Football Arenas")
 
     def __str__(self):
         return self.name
 
 
-class FootballAreaImage(OrderAbstract, CreatedUpdatedAbstract):
-    area = models.ForeignKey(FootballArea, on_delete=models.CASCADE, related_name="images")
+class FootballArenaImage(OrderAbstract, CreatedUpdatedAbstract):
+    area = models.ForeignKey(
+        "arena.FootballArena", on_delete=models.CASCADE, related_name="images"
+    )
     image = models.ImageField(
         storage=MinioBackend(
             bucket_name=settings.PUBLIC_BUCKET_NAME,
@@ -53,8 +55,8 @@ class FootballAreaImage(OrderAbstract, CreatedUpdatedAbstract):
             "area",
             "order",
         )
-        verbose_name = _("Football Area Image")
-        verbose_name_plural = _("Football Area Images")
+        verbose_name = _("Football Arena Image")
+        verbose_name_plural = _("Football Arena Images")
 
     def __str__(self):
         return self.image.name

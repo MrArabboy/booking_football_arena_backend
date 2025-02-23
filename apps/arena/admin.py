@@ -1,10 +1,10 @@
 from django.contrib import admin
 
-from .models import FootballArea, FootballAreaImage
+from .models import FootballArena, FootballArenaImage
 
 
-@admin.register(FootballArea)
-class FootballAreaAdmin(admin.ModelAdmin):
+@admin.register(FootballArena)
+class FootballArenaAdmin(admin.ModelAdmin):
     list_display = ("name", "is_active", "created_at", "updated_at")
     list_filter = ("is_active",)
     search_fields = ("name",)
@@ -12,8 +12,8 @@ class FootballAreaAdmin(admin.ModelAdmin):
     raw_id_fields = ("owner",)
 
 
-@admin.register(FootballAreaImage)
-class FootballAreaImageAdmin(admin.ModelAdmin):
+@admin.register(FootballArenaImage)
+class FootballArenaImageAdmin(admin.ModelAdmin):
     list_display = ("__str__", "area", "order", "created_at", "updated_at")
     search_fields = ("area__name", "image__name")
     raw_id_fields = ("area",)
