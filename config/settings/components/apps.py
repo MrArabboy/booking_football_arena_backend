@@ -16,6 +16,7 @@ THIRD_PARTY_APPS = [
 ]
 LOCAL_APPS = [
     "apps.account",
+    "apps.area",
     "apps.core",
 ]
 
