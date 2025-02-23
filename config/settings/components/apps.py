@@ -15,6 +15,7 @@ THIRD_PARTY_APPS = [
     "django_minio_backend",
 ]
 LOCAL_APPS = [
+    "apps.account",
     "apps.core",
 ]
 
