@@ -13,6 +13,7 @@ THIRD_PARTY_APPS = [
     "rest_framework",
     "drf_yasg",
     "django_minio_backend",
+    "rest_framework_simplejwt",
 ]
 LOCAL_APPS = [
     "apps.account",
