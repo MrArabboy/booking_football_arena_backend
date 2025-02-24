@@ -14,6 +14,6 @@ class FootballArenaAdmin(admin.ModelAdmin):
 
 @admin.register(FootballArenaImage)
 class FootballArenaImageAdmin(admin.ModelAdmin):
-    list_display = ("__str__", "area", "order", "created_at", "updated_at")
-    search_fields = ("area__name", "image__name")
-    raw_id_fields = ("area",)
+    list_display = ("__str__", "arena", "order", "created_at", "updated_at")
+    search_fields = ("arena__name", "image__name")
+    raw_id_fields = ("arena",)

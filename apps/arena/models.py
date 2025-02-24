@@ -40,7 +40,7 @@ class FootballArena(
 
 
 class FootballArenaImage(OrderAbstract, CreatedUpdatedAbstract):
-    area = models.ForeignKey(
+    arena = models.ForeignKey(
         "arena.FootballArena", on_delete=models.CASCADE, related_name="images"
     )
     image = models.ImageField(
@@ -52,7 +52,7 @@ class FootballArenaImage(OrderAbstract, CreatedUpdatedAbstract):
 
     class Meta:
         ordering = (
-            "area",
+            "arena",
             "order",
         )
         verbose_name = _("Football Arena Image")

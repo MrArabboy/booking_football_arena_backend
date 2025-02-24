@@ -18,6 +18,7 @@ REST_FRAMEWORK = {
     "PAGE_SIZE": 10,
     "DATE_INPUT_FORMATS": ["%Y-%m-%d", "%d.%m.%Y"],
     "COERCE_DECIMAL_TO_STRING": False,
+    "EXCEPTION_HANDLER": "apps.core.exceptions.base.drf_exception_handler",
 }
 
 SIMPLE_JWT = {
