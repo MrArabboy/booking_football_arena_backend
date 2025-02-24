@@ -30,8 +30,16 @@ class IsActiveAbstract(models.Model):
 
 
 class OrderAbstract(models.Model):
-    order = models.DecimalField(default=1, max_digits=6, decimal_places=2)
+    order = models.DecimalField(default=1, max_digits=10, decimal_places=2)
 
     class Meta:
         ordering = ("order",)
+        abstract = True
+
+
+class LocationAbstract(models.Model):
+    latitude = models.DecimalField(max_digits=10, decimal_places=8)
+    longitude = models.DecimalField(max_digits=11, decimal_places=8)
+
+    class Meta:
         abstract = True
